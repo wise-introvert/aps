@@ -1,0 +1,39 @@
+######################################################################################################
+## Logic 2: This will define a red-green-amber light system with a request to walk button and a car  #
+## sensor. The system will not have an advance green light.                                          #
+######################################################################################################
+
+START
+
+SET "state" = "green"
+SET "timer" = 40 and begin auto-decrement
+
+## Get current time
+GET "timer" value
+
+## Check if the timer has reached 0
+IF "timer" <= 0 
+  ## Update the state and reset the duration to appropriate values
+  IF "state" == "green"
+    SET "state" = "amber"
+    SET "timer" = 10
+  ELSE IF "state" == "amber"
+    SET "state" = "red"
+    SET "timer" = 150 ## This takes into account the other 3 roads at an intersection
+  ELSE IF "state" = "red    ELSE
+    SET "state" to "green"
+    SET "timer" = 40
+
+## Cars Sensor
+Get number of cars from the cars-sensor
+IF number of cars >= 6
+  IF "state" == "red" and "timer" > 25
+    SET "timer" = 25
+
+## request-to-walk button
+Check if the request-to-walk button was pressed
+IF pressed
+  IF "state" == "red" and "timer" > 25
+    SET "timer" = 25
+
+END
