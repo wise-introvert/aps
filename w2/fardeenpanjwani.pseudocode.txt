@@ -1,0 +1,12 @@
+[Logic 2]
+During the shootout they agree to limit the number of attempts to 3 throws each. The game will be
+constructed in two sessions. In the first session, the first student makes all 3 attempts and in the
+second session, the second student makes all 3 attempts. The student who makes the most baskets
+(gets the ball in the hoop) will be declared the winner. In the case of a tie, the game will be repeated
+until a winner can be determined.
+
+1. Students make 3 attempts each
+2. Outcome: (a) First student dunks more than the second student, (b) Second student dunks more balls than the first student, (c) Both students dunk equal number of balls
+  a. First student is declared the winner
+  b. Second student is declared the winner
+  c. Tie
