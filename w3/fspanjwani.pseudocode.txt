@@ -1,0 +1,27 @@
+Fardeen Panjwani | 119588218
+
+[Logic 2] This will define a red-green-amber light system with a request to walk button and a car
+sensor. The system will not have an advance green light.
+
+1. Start
+2. Initialize "stateDuration" variable and set it to 40 (auto-decrement)
+3. Initialize "state" variable and set it to "green"
+4. Fetch "stateDuration" value
+  a. Value is less than or equal to 10
+    i. Set "state" to "amber"
+  b. Value is 0
+    i. Set "state" to "red"
+5. Fetch number of cars from the cars sensor
+  a. Number of cars is greater than or equal to 6
+    i. "state" is "red" and "stateDuration" is greater than 25
+      - set "stateDuration" to 25
+    ii. "state" is "red" and "stateDuration" is less than 25
+      - Do nothing
+  b. Number of cars is less than 6
+    i. Do nothing
+6. "Request to walk" button is pressed by a pedestrian
+  a. Get "state" value
+    "red": set "stateDuration" value to 25
+    "amber": do nothing
+    "green": do nothing
+7. End
